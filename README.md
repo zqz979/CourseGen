@@ -1,2 +1,2 @@
 # CourseGen
-A course description generator
+A text generation task aiming at generate course descriptions given a course title.
