@@ -44,6 +44,15 @@ for sub_url in sub_urls:
             course = {"title": title, "description": description}
             courses.append(course)
 
+file_path = "./data/undergrad_courses.csv"
+
+with open(file_path, mode="w", encoding="utf-8", newline="") as csv_file:
+    fieldnames = ["title", "description"]
+    writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+    writer.writeheader()
+    for course in courses:
+        writer.writerow(course)
+
 
 # scrape grad courses
 response = requests.get(grad_url)
@@ -80,7 +89,7 @@ for sub_url in sub_urls:
             course = {"title": title, "description": description}
             courses.append(course)
 
-file_path = "./data/courses.csv"
+file_path = "./data/all_courses.csv"
 
 with open(file_path, mode="w", encoding="utf-8", newline="") as csv_file:
     fieldnames = ["title", "description"]
