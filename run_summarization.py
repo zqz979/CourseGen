@@ -685,7 +685,8 @@ def main():
     if training_args.do_predict:
         logger.info("*** Predict ***")
 
-        predict_results = trainer.predict(predict_dataset, metric_key_prefix="predict", no_repeat_ngram_size=2)
+        predict_results = trainer.predict(predict_dataset, metric_key_prefix="predict", no_repeat_ngram_size=3)
+        
         metrics = predict_results.metrics
         max_predict_samples = (
             data_args.max_predict_samples if data_args.max_predict_samples is not None else len(predict_dataset)

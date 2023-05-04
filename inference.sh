@@ -1,15 +1,12 @@
 python ./run_summarization.py \
-    --model_name_or_path ./output2/pytorch_model.bin \
-    --config_name ./output2/config.json \
-    --tokenizer_name t5-small \
+    --model_name_or_path ./small_all_10_lr \
     --do_predict True\
-    --test_file ./data/test.csv \
-    --source_prefix "Generate a description of the following university course based on its title: " \
+    --test_file ./data/all_test.csv \
+    --source_prefix "Generate a description of the following university course: " \
     --max_source_length 128 \
-    --max_target_length 2048 \
-    --output_dir ./output3-no_repeat_ngram \
+    --max_target_length 1024 \
+    --output_dir ./small_all_10_lr_nongram3 \
     --overwrite_output_dir True \
     --per_device_eval_batch_size=4 \
     --predict_with_generate True\
-    --save_steps 5000 \
-    --run_name final582
+    --run_name small_all_10_lr_nongram3
